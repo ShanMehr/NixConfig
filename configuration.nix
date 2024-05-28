@@ -40,11 +40,7 @@
     LC_PAPER = "en_US.UTF-8";
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
-  };
-	
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
+  };	
 
   # Configure keymap in X11
   services.xserver = {
@@ -99,6 +95,7 @@
   environment.systemPackages = with pkgs; [
      # xconf
      go
+     cudaPackages_12_2.cudatoolkit 
      micromamba
      gnumake
      gcc
