@@ -1,0 +1,1 @@
+/home/sanner/../../etc/nixos/configuration.nix
