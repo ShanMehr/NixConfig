@@ -97,6 +97,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     # xconf
+     go
      micromamba
      gnumake
      gcc
@@ -190,5 +192,14 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
- 
+  # Applications
+  programs.thunar.enable = true;
+  # programs.xconf.enable = true;
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
+
+  #services.gvfs.enable = true; # Mount, trash, and other functionalities
+  #services.tumbler.enable = true; # Thumbnail support for images
 }
